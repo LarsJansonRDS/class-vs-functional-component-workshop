@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
+import "../layout/layout.scss";
 
-import Hoc from '../1-Basics/3_hoc_class';
+import Excercise from '../2-Exercise/Excercise';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' Component={Hoc} />
+          <Route path='/' Component={Excercise} />
         </Routes>
       </BrowserRouter>
     </div>
