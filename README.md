@@ -1,3 +1,6 @@
+After cloning execute `npm install`.
+Before use execute `npm start`.
+
 ### Content
 
 This learning project shows the basics for class and functional components.
