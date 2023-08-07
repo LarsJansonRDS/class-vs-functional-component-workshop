@@ -7,10 +7,12 @@ export function Hooks() {
     // hooks let you use different react features
     // Important: hooks can only be called inside the top level of a functional component or inside another hook
     // so if you, for example, make a utility function which uses at least one hook, the function itself must also be a hook
-    // hooks have to start with "use"
+    // every render must have the same amount of used hooks, so you must not use a hook inside of ifs
+    // the name of a hook have to start with "use"
 
     // a few examples of hooks
 
+    // explained in the former file
     const [stateVar, setStateVar] = useState(0);
 
 
@@ -21,7 +23,7 @@ export function Hooks() {
     }, []);
 
 
-    // is not recalculated every render, only when the component is mounted AND after every time "stateVar" is updated
+    // is not recalculated every render, only when the component is mounted AND after every time the given variable, in this case "stateVar", is updated
     // recommended for costly calculations
     const memorizedValue = useMemo(() => {
         return stateVar + 5;
@@ -32,7 +34,7 @@ export function Hooks() {
     const context = useContext(TestContext);
 
 
-    // react-router-dom and wouter also have this hook, the (simplified) custom implementation is only for tutorial purposes
+    // react-router-dom and wouter also have this hook, this (oversimplified) custom implementation is only for tutorial purposes
     // is used to give a better comparison to hoc's in class component
     const history = useLocation();
 

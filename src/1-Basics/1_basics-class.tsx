@@ -6,11 +6,12 @@ type Props = {
     propsVar: string;
 };
 
-// the props type has to be given to React.Component, otherwise it is any
+// the props type has to be given to React.Component, otherwise this.props is of type "any"
 export class Basics extends React.Component<Props>{
 
-    // every var and function can get a private/protected/public member visibility
+    // every variable and function can get a private/protected/public member visibility
     // if none is given the member is public
+    // private variables start with a underscore ("_")
     private readonly _variable = "Basic functional component";
 
     // clients and suchlike are declared inside the class body, but are defined in the constructor

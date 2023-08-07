@@ -15,8 +15,9 @@ export function LifeCyclesAndState() {
 
 
     // useEffect: the second argument determines when the given function is called
+    // multiple useEffects are executed in order from top to bottom
 
-    // because of the [] in the second argument:
+    // because of [] as the second argument:
     //      is called when the component is mounted
     //      equivalent to componentDidMount
     useEffect(() => {
@@ -42,15 +43,15 @@ export function LifeCyclesAndState() {
 
     // because no second argument is given:
     //      will be called when the component is mounted AND after every update
-    //      equivalent to componentDidUpdate
+    //      equivalent to componentDidMount + componentDidUpdate
     useEffect(() => {
 
     });
 
 
-    // because of the [testVar] in the second argument:
+    // because of [testVar] as the second argument:
     //      is called when the component is mounted AND after every time the variable given in the array has changed
-    //      partly a equivalent to the callback function from setState in class components
+    //      partly a equivalent to componentDidMount + the callback function from setState in class components
     useEffect(() => {
         // with a function call inside a state setter function you can access the value of the variable before it was changed
         setTestVar((prevTestVar) => (prevTestVar ?? 0) + 5);
