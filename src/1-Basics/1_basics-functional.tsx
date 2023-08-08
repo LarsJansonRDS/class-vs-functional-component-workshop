@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { TestClient } from "../utilities/misc";
 
 type Props = {
@@ -9,8 +11,9 @@ export function Basics(props: Props) {
     // because the component is a function, variables can be declared with const and let (for completion: also with var)
     const variable = "Basic functional component";
 
-    // clients and suchlike are declared and defined at the same place
-    const _client = new TestClient();
+    // clients and suchlike are declared and defined at the same place with useMemo
+    // useMemo is used, because otherwise the client is redefined in every render
+    const _client = useMemo(() => new TestClient(), []);
 
     // functions can be declared in two ways and are usually declared above the return.
     function functionWithFunctionDeclaration() {
